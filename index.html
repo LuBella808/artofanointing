@@ -106,7 +106,7 @@
     /* Art slider */
     .slider-track {
       display: flex;
-      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
     }
     .slider-slide {
       flex: 0 0 100%;
@@ -380,7 +380,7 @@
 
       <!-- COVENANT -->
       <div class="fade-up mt-20 relative rounded-sm overflow-hidden min-h-[440px] flex items-end">
-        <img src="covenant.webp" alt="Covenant Botanical Perfume" class="absolute inset-0 w-full h-full object-cover object-center" />
+        <img src="covenant.jpg" alt="Covenant Botanical Perfume" class="absolute inset-0 w-full h-full object-cover object-center" />
         <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(44,31,14,0.90) 0%, rgba(44,31,14,0.55) 55%, transparent 100%);"></div>
         <div class="relative z-10 p-10 md:p-14 max-w-lg">
           <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">A Perfume for the Threshold</p>
@@ -409,12 +409,14 @@
   </section>
 
   <!-- BOOK -->
-  <section id="book" class="bg-teal py-28 px-6" style="background: linear-gradient(135deg, #4A6E8A 0%, #6B8FAF 60%, #5A7A9A 100%);">
+  <section id="book" class="py-28 px-6" style="background: linear-gradient(135deg, #0A2A3A 0%, #0D3D5C 35%, #1A5A7A 65%, #0E3048 100%);">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
       <div class="fade-up flex justify-center">
         <div class="relative">
-          <img src="book-cover.jpg" alt="The Art of Anointing book cover" class="w-56 md:w-72 shadow-2xl rounded-sm" />
-          <div class="absolute -bottom-4 -right-4 w-full h-full border border-gold/30 rounded-sm pointer-events-none"></div>
+          <!-- Glow behind book -->
+          <div class="absolute inset-0 scale-110 rounded-sm opacity-50" style="background: radial-gradient(ellipse 80% 90% at 50% 50%, #4A9ECA 0%, transparent 70%); filter: blur(24px);"></div>
+          <img src="book-cover.jpg" alt="The Art of Anointing book cover" class="relative w-56 md:w-72 shadow-2xl rounded-sm" style="box-shadow: 0 0 60px rgba(74,158,202,0.4), 0 20px 60px rgba(0,0,0,0.6);" />
+          <div class="absolute -bottom-4 -right-4 w-full h-full border border-gold/40 rounded-sm pointer-events-none"></div>
         </div>
       </div>
       <div class="fade-up delay-2 text-ivory">
@@ -521,6 +523,18 @@
               <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
             </div>
           </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="lu_wonder.jpg" alt="Lucinda with Wonder Woman painting" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="bloom.jpg" alt="Bloom painting by Lucinda Rae" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
         </div>
 
         <!-- Slider controls -->
@@ -541,6 +555,8 @@
         <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="4"></button>
         <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="5"></button>
         <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="6"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="7"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="8"></button>
       </div>
 
       <div class="fade-up text-center mt-10">
@@ -558,7 +574,7 @@
 
       <div class="fade-up relative">
         <div class="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
-          <img src="lucinda-wolf.jpg" alt="Lucinda Rae" class="w-full h-full object-cover" />
+          <img src="Lu 3.jpg" alt="Lucinda Rae" class="w-full h-full object-cover" />
           <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,31,14,0.4) 0%, transparent 60%);"></div>
         </div>
         <!-- Gold border accent -->
@@ -566,7 +582,7 @@
         <!-- Floating quote -->
         <div class="absolute -bottom-6 left-4 right-16 glass rounded-sm px-5 py-4">
           <p class="font-serif italic text-ink text-sm leading-relaxed">
-            "I am convinced that beauty is not decoration. It is a portal to the divine."
+            "Beauty is a portal to the Divine."
           </p>
         </div>
       </div>
@@ -651,7 +667,7 @@
       <!-- Square video panel -->
       <div class="relative aspect-square md:aspect-auto overflow-hidden">
         <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay muted loop playsinline preload="metadata">
-          <source src="WhatsApp_Video_20250624_at_20.51.15_11b883ad.mp4" type="video/mp4" />
+          <source src="WhatsApp Video 20250624 at 20.51.15_11b883ad.mp4" type="video/mp4" />
         </video>
         <!-- Subtle warm vignette -->
         <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(44,31,14,0.5) 100%);"></div>
@@ -710,8 +726,9 @@
         </div>
         <div>
           <p class="font-mono text-xs tracking-widest uppercase text-gold mb-3 opacity-70">Follow</p>
-          <a href="#" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Instagram</a>
-          <a href="#" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">TikTok</a>
+          <a href="https://www.instagram.com/anointedrituals" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Instagram</a>
+          <a href="https://www.tiktok.com/@anointedrituals" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">TikTok</a>
+          <a href="https://www.youtube.com/@anointedrituals" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">YouTube</a>
           <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Substack</a>
         </div>
       </div>
@@ -763,8 +780,8 @@
     document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1))
     dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.dot)))
 
-    // Auto-advance every 4s
-    setInterval(() => goTo(current >= maxIndex() ? 0 : current + 1), 4000)
+    // Auto-advance every 2.8s
+    setInterval(() => goTo(current >= maxIndex() ? 0 : current + 1), 2800)
   </script>
 
 </body>
