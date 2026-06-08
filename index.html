@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Art of Anointing · Lucinda Rae</title>
+  <meta name="description" content="Remembering the light God placed within you. Holy oils, daily rituals, and the ancient practice of meeting God in your body." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:      '#FAF6EF',
+            champagne:  '#F0E6CC',
+            gold:       '#C9A84C',
+            'gold-pale':'#E8D5A3',
+            'gold-warm':'#F2C96E',
+            teal:       '#6B8FAF',
+            'teal-dark':'#4A6E8A',
+            ink:        '#2C1F0E',
+            'ink-soft': '#5C4A38',
+            coral:      '#E8836A',
+            dawn:       '#FFF3DC',
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans:  ['"Inter"', 'system-ui', 'sans-serif'],
+            mono:  ['"JetBrains Mono"', 'monospace'],
+          },
+          letterSpacing: { widest2: '0.25em' },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { overflow-x: hidden; }
+
+    /* Morning golden glow — radial sunrise warmth behind light sections */
+    .dawn-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, #FFF0CC 0%, #FAF6EF 55%, #F0E6CC 100%);
+    }
+    .dawn-glow-side {
+      background: radial-gradient(ellipse 60% 80% at 15% 50%, #FFF3DC 0%, #FAF6EF 60%, #F0E6CC 100%);
+    }
+
+    .glass {
+      background: rgba(250,246,239,0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .text-shadow-warm { text-shadow: 0 2px 24px rgba(44,31,14,0.5); }
+    .text-shadow-gold { text-shadow: 0 0 40px rgba(201,168,76,0.35); }
+
+    /* Fade-up on scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+
+    /* Scroll indicator pulse */
+    @keyframes scrollPulse {
+      0%,100% { transform: translateY(0); opacity:0.6; }
+      50% { transform: translateY(8px); opacity:1; }
+    }
+    .scroll-pulse { animation: scrollPulse 2.4s ease infinite; }
+
+    /* Hero parallax overlay fade */
+    #hero-content { transition: opacity 0.1s linear; }
+
+    /* Nav fade in */
+    @keyframes navFadeIn {
+      from { opacity:0; transform:translateY(-16px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    nav { animation: navFadeIn 0.8s 0.3s both; }
+
+    /* Hero text animations */
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .hero-tag  { animation: fadeInUp 1s 0.6s both; }
+    .hero-h1   { animation: fadeInUp 1.2s 0.8s both; }
+    .hero-sub  { animation: fadeInUp 1s 1.2s both; }
+    .hero-cta  { animation: fadeInUp 0.8s 1.4s both; }
+
+    /* Card hover */
+    .pathway-card { transition: border-color 0.3s, transform 0.3s; }
+    .pathway-card:hover { border-color: rgba(201,168,76,0.6); transform: translateY(-2px); }
+
+    /* Oil image hover */
+    .oil-img { transition: transform 0.7s ease; }
+    .oil-card:hover .oil-img { transform: scale(1.05); }
+
+    /* Art slider */
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .slider-slide {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .slider-slide { flex: 0 0 50%; width: 50%; }
+    }
+
+    /* Gold divider pulse */
+    @keyframes goldPulse {
+      0%,100% { opacity: 0.25; }
+      50% { opacity: 0.6; }
+    }
+    .gold-divider { animation: goldPulse 4s ease infinite; }
+
+    /* Sunrise shimmer on text */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .sunrise-text {
+      background: linear-gradient(90deg, #C9A84C 0%, #F2C96E 40%, #E8D5A3 55%, #C9A84C 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-ivory text-ink font-sans">
+
+  <!-- NAV -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-all duration-500">
+    <span class="font-serif text-ivory text-sm italic tracking-wide">Lucinda Rae</span>
+    <div class="hidden md:flex items-center gap-6 glass rounded-full px-6 py-2">
+      <a href="#book" class="font-mono text-xs tracking-widest uppercase text-ivory opacity-80 hover:opacity-100 transition-opacity">Book</a>
+      <a href="#the-apothecary" class="font-mono text-xs tracking-widest uppercase text-ivory opacity-80 hover:opacity-100 transition-opacity">The Apothecary</a>
+      <a href="#listen" class="font-mono text-xs tracking-widest uppercase text-ivory opacity-80 hover:opacity-100 transition-opacity">Listen</a>
+      <a href="#about" class="font-mono text-xs tracking-widest uppercase text-ivory opacity-80 hover:opacity-100 transition-opacity">About</a>
+      <a href="#the-academy" class="font-mono text-xs tracking-widest uppercase text-ivory opacity-80 hover:opacity-100 transition-opacity">The Academy</a>
+    </div>
+    <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer"
+      class="font-mono text-xs tracking-widest uppercase text-gold border border-gold rounded-full px-4 py-1.5 opacity-80 hover:opacity-100 transition-all">
+      Substack
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="relative h-screen w-full overflow-hidden">
+    <video class="absolute inset-0 w-full h-full object-cover object-top" autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg">
+      <source src="983b5ef947d04385b17d563f51c0e41c.HD720p2.1Mbps42525527.mp4" type="video/mp4" />
+    </video>
+    <!-- Warm sunrise gradient overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(44,31,14,0.35) 0%, rgba(180,120,40,0.12) 40%, rgba(44,31,14,0.75) 100%);"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(242,201,110,0.08) 0%, transparent 70%);"></div>
+
+    <div id="hero-content" class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+      <p class="hero-tag font-mono text-xs tracking-widest uppercase text-gold-pale mb-6 opacity-90">
+        A Modern Path into Embodied Living Prayer
+      </p>
+      <h1 class="hero-h1 font-serif text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight text-shadow-warm max-w-4xl">
+        Remember the Light<br />
+        <span class="italic sunrise-text">God Placed Within You</span>
+      </h1>
+      <p class="hero-sub font-sans text-sm md:text-base text-white/75 mt-6 max-w-md leading-relaxed">
+        You are faithful. You are held. You belong here.<br />
+        Your body is sacred ground.<br />
+        And you were always meant to come home.
+      </p>
+      <a href="#pathways" class="hero-cta mt-10 font-mono text-xs tracking-widest uppercase text-ivory border border-white/40 rounded-full px-8 py-3 hover:border-gold hover:text-gold transition-all duration-300">
+        Come Inside
+      </a>
+    </div>
+
+    <div class="scroll-pulse absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
+      <div class="w-px h-10 bg-gradient-to-b from-transparent to-gold/50"></div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="dawn-glow py-28 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="fade-up">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">The Art of Anointing</p>
+      </div>
+      <div class="fade-up delay-1">
+        <blockquote class="font-serif text-2xl md:text-3xl italic text-ink leading-relaxed mb-10">
+          "The oil is ready. Your body is holy.<br />
+          <span class="text-gold">And you were never meant to carry this alone."</span>
+        </blockquote>
+      </div>
+      <div class="fade-up delay-1 flex items-center gap-4 my-2">
+        <div class="h-px flex-1 bg-gold gold-divider"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-gold opacity-60"></div>
+        <div class="h-px flex-1 bg-gold gold-divider"></div>
+      </div>
+      <div class="fade-up delay-2">
+        <div class="font-sans text-ink-soft text-base md:text-lg leading-loose mt-10 space-y-5">
+          <p>The Art of Anointing is not a method. It is not a program.</p>
+          <p>It is a return.</p>
+          <p>To the body. To beauty. To prayer.<br />To the oldest wisdom your hands already know.</p>
+          <p>For thousands of years, women carried oil.<br />
+          They poured it over what was broken, what was beloved,<br />
+          what needed to be made holy again.</p>
+          <p class="text-ink font-medium">
+            They understood something we are only now remembering:<br />
+            <span class="italic">God meets us in the body.<br />
+            Healing comes through the senses.<br />
+            Beauty is not frivolous. It is formative.</span>
+          </p>
+          <p>This is a place to exhale. To create. To be held.<br />
+          To come home to yourself and to God.</p>
+          <p class="font-serif text-xl italic text-gold mt-6">Welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+      <source src="Professional_Mode_She_brings_her_hands_to_her_face_1.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(44,31,14,0.88) 0%, rgba(44,31,14,0.65) 50%, rgba(44,31,14,0.20) 100%);"></div>
+    <!-- Warm sunrise glow on left -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 50% 60% at 10% 60%, rgba(242,201,110,0.07) 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center py-24">
+      <div class="fade-up text-ivory">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">How It Began</p>
+        <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-8">
+          There was a season<br />
+          <span class="italic text-gold-pale">when I was drowning.</span>
+        </h2>
+        <div class="font-sans text-white/80 text-base leading-loose space-y-5">
+          <p>A mother in crisis. Cortisol-soaked and hypervigilant, holding everything for everyone, unable to feel God anywhere near me.</p>
+          <p>I reached for olive oil from the Holy Land.</p>
+          <p>I had been studying the ancient ways. I understood that oil was for consecrating something holy. And I needed to consecrate myself back into existence.</p>
+          <p>That single act cracked something open.</p>
+          <p>A quiet return. A sensory remembrance that my body was not the enemy. That God's presence was not only something I could think about. It was something I could <em>feel.</em></p>
+          <p>What began as a personal practice became oils, then rituals, then a book, then an academy, then this: a living body of work for every woman who needs to be reminded she is not broken.</p>
+          <p class="font-serif italic text-gold-pale text-lg">She has simply forgotten. And she can return.</p>
+        </div>
+        <a href="#about" class="inline-block mt-8 font-mono text-xs tracking-widest uppercase text-gold border border-gold/50 rounded-full px-7 py-3 hover:border-gold transition-all">
+          Read More About Lucinda
+        </a>
+      </div>
+
+      <div class="fade-up delay-2 relative">
+        <img src="lucinda-candle.jpg" alt="Lucinda Rae" class="rounded-sm w-full max-w-md mx-auto object-cover shadow-2xl" />
+        <div class="absolute -bottom-4 -left-4 glass rounded-sm px-5 py-4 max-w-xs">
+          <p class="font-serif italic text-ivory text-sm leading-relaxed">
+            "When someone you love is struggling and you can't fix it, it can consume your entire life. You don't have to live that way."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHWAYS -->
+  <section id="pathways" class="dawn-glow py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="fade-up text-center mb-16">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">Find Your Way In</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-ink">Every path leads home.</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer"
+          class="fade-up pathway-card group block bg-ivory/80 rounded-sm p-8 border border-gold/20 h-full" style="box-shadow: 0 4px 32px rgba(201,168,76,0.08);">
+          <span class="text-gold text-2xl block mb-4">✦</span>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-2 opacity-70">The Book</p>
+          <h3 class="font-serif text-xl text-ink mb-3">The Art of Anointing</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-6">Holy Oils, Daily Rituals, and the Ancient Practice of Meeting God in Your Body</p>
+          <span class="font-mono text-xs tracking-widest uppercase text-gold group-hover:text-coral transition-colors">Join the Waitlist</span>
+        </a>
+
+        <a href="https://www.anointedrituals.com/collections/anointing-oils" target="_blank" rel="noopener noreferrer"
+          class="fade-up delay-1 pathway-card group block bg-ivory/80 rounded-sm p-8 border border-gold/20 h-full" style="box-shadow: 0 4px 32px rgba(201,168,76,0.08);">
+          <span class="text-gold text-2xl block mb-4">◦</span>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-2 opacity-70">The Apothecary</p>
+          <h3 class="font-serif text-xl text-ink mb-3">Anointed Rituals</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-6">Botanically crafted oils and perfumes rooted in ancient wisdom. Each one a prayer in a bottle.</p>
+          <span class="font-mono text-xs tracking-widest uppercase text-gold group-hover:text-coral transition-colors">Shop the Collection</span>
+        </a>
+
+        <a href="#listen"
+          class="fade-up delay-2 pathway-card group block bg-ivory/80 rounded-sm p-8 border border-gold/20 h-full" style="box-shadow: 0 4px 32px rgba(201,168,76,0.08);">
+          <span class="text-gold text-2xl block mb-4">♪</span>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-2 opacity-70">Listen</p>
+          <h3 class="font-serif text-xl text-ink mb-3">Return to Sacred Sensuality</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-6">A private audio space for the woman who has been holding everything and is ready to feel held too.</p>
+          <span class="font-mono text-xs tracking-widest uppercase text-gold group-hover:text-coral transition-colors">Access the Podcast — Free</span>
+        </a>
+
+        <a href="https://artofanointing.com/academy"
+          class="fade-up delay-3 pathway-card group block bg-ivory/80 rounded-sm p-8 border border-gold/20 h-full" style="box-shadow: 0 4px 32px rgba(201,168,76,0.08);">
+          <span class="text-gold text-2xl block mb-4">✧</span>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-2 opacity-70">The Academy</p>
+          <h3 class="font-serif text-xl text-ink mb-3">Anointed Artist Academy</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-6">Formation and certification for creative women called to guide others through sacred creativity and return.</p>
+          <span class="font-mono text-xs tracking-widest uppercase text-gold group-hover:text-coral transition-colors">Learn More</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APOTHECARY -->
+  <section id="the-apothecary" class="bg-ivory py-28 px-6" style="background: radial-gradient(ellipse 90% 50% at 50% 0%, #FFF5DC 0%, #FAF6EF 50%);">
+    <div class="max-w-5xl mx-auto">
+      <div class="fade-up text-center mb-6">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">The Sacred Collection</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-ink mb-4">Each oil is a threshold.</h2>
+        <p class="font-sans text-ink-soft text-base max-w-lg mx-auto leading-relaxed">A sensory invitation to slow down, return, and remember.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-14">
+
+        <div class="fade-up oil-card flex flex-col">
+          <div class="relative overflow-hidden rounded-sm mb-5 aspect-[4/5] bg-champagne">
+            <img src="oil-blessing.png" alt="BLESSING" class="oil-img w-full h-full object-cover" />
+            <div class="absolute top-3 left-3">
+              <span class="font-mono text-xs tracking-widest uppercase text-gold-pale bg-ink/40 backdrop-blur-sm rounded-full px-3 py-1">Morning</span>
+            </div>
+          </div>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-1 opacity-70">Ritual Oil</p>
+          <h3 class="font-serif text-2xl text-ink mb-1">BLESSING</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-4">For the woman who needs to remember she is beloved. Luminous. Gentle. An anointing of grace.</p>
+          <div class="flex items-center justify-between mt-auto">
+            <span class="font-serif text-lg text-gold">$58</span>
+            <a href="https://www.anointedrituals.com/collections/anointing-oils" target="_blank" rel="noopener noreferrer" class="font-mono text-xs tracking-widest uppercase text-ink-soft hover:text-gold transition-colors">Shop</a>
+          </div>
+        </div>
+
+        <div class="fade-up delay-1 oil-card flex flex-col">
+          <div class="relative overflow-hidden rounded-sm mb-5 aspect-[4/5] bg-champagne">
+            <img src="oil-nectar.jpg" alt="NECTAR" class="oil-img w-full h-full object-cover" />
+            <div class="absolute top-3 left-3">
+              <span class="font-mono text-xs tracking-widest uppercase text-gold-pale bg-ink/40 backdrop-blur-sm rounded-full px-3 py-1">Midday</span>
+            </div>
+          </div>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-1 opacity-70">Ritual Oil</p>
+          <h3 class="font-serif text-2xl text-ink mb-1">NECTAR</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-4">For the woman who has forgotten she is alive in her body. Warm. Honeyed. An anointing for the senses.</p>
+          <div class="flex items-center justify-between mt-auto">
+            <span class="font-serif text-lg text-gold">$60</span>
+            <a href="https://www.anointedrituals.com/collections/anointing-oils" target="_blank" rel="noopener noreferrer" class="font-mono text-xs tracking-widest uppercase text-ink-soft hover:text-gold transition-colors">Shop</a>
+          </div>
+        </div>
+
+        <div class="fade-up delay-2 oil-card flex flex-col">
+          <div class="relative overflow-hidden rounded-sm mb-5 aspect-[4/5] bg-champagne">
+            <img src="oil-temple.jpg" alt="TEMPLE" class="oil-img w-full h-full object-cover" />
+            <div class="absolute top-3 left-3">
+              <span class="font-mono text-xs tracking-widest uppercase text-gold-pale bg-ink/40 backdrop-blur-sm rounded-full px-3 py-1">Evening</span>
+            </div>
+          </div>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-1 opacity-70">Ritual Oil</p>
+          <h3 class="font-serif text-2xl text-ink mb-1">TEMPLE</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-4">For the sacred closing of the day. Deep. Still. A prayer for what you are releasing.</p>
+          <div class="flex items-center justify-between mt-auto">
+            <span class="font-serif text-lg text-gold">$77</span>
+            <a href="https://www.anointedrituals.com/collections/anointing-oils" target="_blank" rel="noopener noreferrer" class="font-mono text-xs tracking-widest uppercase text-ink-soft hover:text-gold transition-colors">Shop</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COVENANT -->
+      <div class="fade-up mt-20 relative rounded-sm overflow-hidden min-h-[440px] flex items-end">
+        <img src="covenant.webp" alt="Covenant Botanical Perfume" class="absolute inset-0 w-full h-full object-cover object-center" />
+        <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(44,31,14,0.90) 0%, rgba(44,31,14,0.55) 55%, transparent 100%);"></div>
+        <div class="relative z-10 p-10 md:p-14 max-w-lg">
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">A Perfume for the Threshold</p>
+          <h3 class="font-serif text-4xl md:text-5xl text-ivory mb-4 italic">Covenant</h3>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold/70 mb-5">Botanical Perfume · $190</p>
+          <blockquote class="font-serif italic text-gold-pale text-base mb-5 border-l border-gold/40 pl-4">
+            "I will betroth you to Me forever." Hosea 2:19
+          </blockquote>
+          <p class="font-sans text-white/80 text-sm leading-relaxed mb-7">
+            Inspired by the Ark of the Covenant. Incense. Sacred woods. Trilogy rose. This is not simply a fragrance. It is a threshold. A consecration. Something to wear when you are ready to be met.
+          </p>
+          <a href="https://www.anointedrituals.com/collections/botanical-perfumes" target="_blank" rel="noopener noreferrer"
+            class="inline-block font-mono text-xs tracking-widest uppercase text-ivory border border-white/40 rounded-full px-7 py-3 hover:border-gold hover:text-gold transition-all">
+            Shop Covenant
+          </a>
+        </div>
+      </div>
+
+      <div class="fade-up text-center mt-10">
+        <a href="https://www.anointedrituals.com/collections/anointing-oils" target="_blank" rel="noopener noreferrer"
+          class="font-mono text-xs tracking-widest uppercase text-gold hover:text-coral transition-colors">
+          Enter the Apothecary
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="bg-teal py-28 px-6" style="background: linear-gradient(135deg, #4A6E8A 0%, #6B8FAF 60%, #5A7A9A 100%);">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div class="fade-up flex justify-center">
+        <div class="relative">
+          <img src="book-cover.jpg" alt="The Art of Anointing book cover" class="w-56 md:w-72 shadow-2xl rounded-sm" />
+          <div class="absolute -bottom-4 -right-4 w-full h-full border border-gold/30 rounded-sm pointer-events-none"></div>
+        </div>
+      </div>
+      <div class="fade-up delay-2 text-ivory">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">Coming Soon</p>
+        <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-3">The Art of Anointing</h2>
+        <p class="font-sans text-gold-pale text-sm tracking-wide mb-6">
+          Holy Oils, Daily Rituals, and the Ancient Practice<br />of Meeting God in Your Body
+        </p>
+        <div class="flex items-center gap-4 my-4">
+          <div class="h-px flex-1 bg-gold opacity-30"></div>
+          <div class="w-1.5 h-1.5 rounded-full bg-gold opacity-50"></div>
+          <div class="h-px flex-1 bg-gold opacity-30"></div>
+        </div>
+        <div class="font-sans text-white/80 text-sm leading-loose space-y-4 mt-6">
+          <p>This is a book about coming home to yourself through oil, touch, and the oldest prayer language the body knows.</p>
+          <p>Part spiritual history. Part embodied practice. Part quiet theology. Biblically rooted. Sensory without being self-indulgent.</p>
+          <p class="font-serif italic text-gold-pale text-base">Written for the woman who believes and is ready to feel it.</p>
+        </div>
+        <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer"
+          class="inline-block mt-8 font-mono text-xs tracking-widest uppercase text-ivory border border-white/40 rounded-full px-7 py-3 hover:border-gold-pale hover:text-gold-pale transition-all">
+          Be the First to Know
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section id="listen" class="relative py-28 px-6 overflow-hidden min-h-[60vh] flex items-center">
+    <video class="absolute inset-0 w-full h-full object-cover object-top" autoplay muted loop playsinline preload="metadata">
+      <source src="5015B1AE5B404B10B5544462D2D10EEC.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(44,31,14,0.50) 0%, rgba(44,31,14,0.22) 50%, rgba(44,31,14,0.55) 100%);"></div>
+    <!-- Warm glow center -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(242,201,110,0.06) 0%, transparent 70%);"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center text-ivory w-full">
+      <div class="fade-up">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">Private Podcast</p>
+        <h2 class="font-serif text-4xl md:text-5xl italic leading-tight mb-6">
+          ANOINTED:<br /><span class="text-gold-pale">Return to Sacred Sensuality</span>
+        </h2>
+        <p class="font-sans text-sm text-white/80 leading-loose max-w-xl mx-auto mb-4">
+          A private audio space for the woman who has been holding everything and is ready to feel held too.
+        </p>
+        <div class="font-serif italic text-gold-pale text-base space-y-1 mb-8">
+          <p>Come back to your body.</p>
+          <p>Come back to God.</p>
+          <p>Come back to yourself.</p>
+        </div>
+        <a href="https://anointedrituals.com/pages/podcast" target="_blank" rel="noopener noreferrer"
+          class="inline-block font-mono text-xs tracking-widest uppercase text-ivory border border-white/50 rounded-full px-8 py-3 hover:border-gold hover:text-gold transition-all">
+          Listen — Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ART -->
+  <section class="bg-ink py-28 px-6 overflow-hidden" style="background: linear-gradient(180deg, #2C1F0E 0%, #1A1208 100%);">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-up text-center mb-14">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">From the Studio</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-ivory mb-6">Art as Prayer. Painting as Practice.</h2>
+        <blockquote class="font-serif text-base md:text-xl italic text-gold-pale max-w-2xl mx-auto leading-relaxed">
+          "My art is a prayer: an offering to the wild beauty of this creation and the quiet presence of Divine Grace. Through my vision, I desire to make visible and felt — heaven on earth and within."
+        </blockquote>
+      </div>
+
+      <!-- Slider -->
+      <div class="fade-up relative overflow-hidden rounded-sm">
+        <div class="slider-track" id="artSlider">
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="Lucinda_with_Leopard.jpg" alt="Lucinda Rae with candles and paintings" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="Wild-heart1.jpg" alt="Wild Heart painting" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="lucinda-wolf.jpg" alt="Lucinda Rae with wolf painting" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="lucinda-painting.jpg" alt="Lucinda painting" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="lucinda-ladder.jpg" alt="Lucinda painting large canvas" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="slider-slide px-2">
+            <div class="relative aspect-square overflow-hidden rounded-sm bg-ink-soft">
+              <img src="lucinda-angels.jpg" alt="Lucinda with angel paintings" class="w-full h-full object-cover oil-img" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider controls -->
+        <button id="sliderPrev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass flex items-center justify-center text-gold hover:text-gold-pale transition-colors z-10">
+          &#8592;
+        </button>
+        <button id="sliderNext" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass flex items-center justify-center text-gold hover:text-gold-pale transition-colors z-10">
+          &#8594;
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-6" id="sliderDots">
+        <button class="w-1.5 h-1.5 rounded-full bg-gold transition-opacity" data-dot="0"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="1"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="2"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="3"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="4"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="5"></button>
+        <button class="w-1.5 h-1.5 rounded-full bg-gold opacity-30 transition-opacity" data-dot="6"></button>
+      </div>
+
+      <div class="fade-up text-center mt-10">
+        <a href="https://lucindaraeart.com" target="_blank" rel="noopener noreferrer"
+          class="font-mono text-xs tracking-widest uppercase text-gold hover:text-coral transition-colors">
+          Visit the Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / BIO -->
+  <section id="about" class="dawn-glow-side py-28 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+      <div class="fade-up relative">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+          <img src="lucinda-wolf.jpg" alt="Lucinda Rae" class="w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,31,14,0.4) 0%, transparent 60%);"></div>
+        </div>
+        <!-- Gold border accent -->
+        <div class="absolute -bottom-4 -right-4 w-full h-full border border-gold/25 rounded-sm pointer-events-none"></div>
+        <!-- Floating quote -->
+        <div class="absolute -bottom-6 left-4 right-16 glass rounded-sm px-5 py-4">
+          <p class="font-serif italic text-ink text-sm leading-relaxed">
+            "I am convinced that beauty is not decoration. It is a portal to the divine."
+          </p>
+        </div>
+      </div>
+
+      <div class="fade-up delay-2 pt-8">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">About Lucinda</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-ink leading-tight mb-8">
+          Scholar. Sensualist.<br />
+          <span class="italic text-gold">Artist. Mystic.</span>
+        </h2>
+        <div class="font-sans text-ink-soft text-base leading-loose space-y-5">
+          <p>
+            Lucinda Rae is a biblical scholar, visual artist, perfumer, and the founder of Anointed Rituals. She has spent over a decade studying the ancient practice of anointing — its theology, its history, its embodied power — and translating that wisdom into oils, art, and teaching that women can live.
+          </p>
+          <p>
+            Her scholarship is rooted in the Hebrew and Greek texts, in early church tradition, and in the sensory language of the Song of Songs. She holds that the body was never an obstacle to God but always the meeting place.
+          </p>
+          <p>
+            As an artist, she paints from that same conviction: that heaven is already pressing through the visible world, and that beauty, made with intention, can crack us open to encounter. Her studio is a sanctuary. Her paintings are prayers.
+          </p>
+          <p>
+            As a sensualist and perfumer, she crafts botanical fragrances and ritual oils that bring the ancient practice of anointing into daily life — not as religion, but as return. Each bottle is a threshold.
+          </p>
+          <p class="font-serif italic text-gold text-lg">
+            She teaches what she has lived: that women who come home to their bodies come home to God.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <span class="font-mono text-xs tracking-widest uppercase text-ink-soft border border-gold/30 rounded-full px-4 py-1.5">Biblical Scholar</span>
+          <span class="font-mono text-xs tracking-widest uppercase text-ink-soft border border-gold/30 rounded-full px-4 py-1.5">Visual Artist</span>
+          <span class="font-mono text-xs tracking-widest uppercase text-ink-soft border border-gold/30 rounded-full px-4 py-1.5">Perfumer</span>
+          <span class="font-mono text-xs tracking-widest uppercase text-ink-soft border border-gold/30 rounded-full px-4 py-1.5">Teacher</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACADEMY -->
+  <section id="the-academy" class="py-28 px-6" style="background: linear-gradient(180deg, #F0E6CC 0%, #FAF6EF 100%);">
+    <div class="max-w-5xl mx-auto">
+      <div class="fade-up text-center mb-16">
+        <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">For the Woman Called to Lead</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-ink mb-6 leading-tight">Anointed Artist Academy</h2>
+        <div class="font-sans text-ink-soft text-base leading-loose max-w-2xl mx-auto space-y-3">
+          <p>What if your creativity was not a hobby, but a healing modality?</p>
+          <p>What if beauty was not indulgent, but a pathway back to God?</p>
+          <p>What if your calling came with a framework, a community, and a way to share it with others?</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="fade-up bg-ivory rounded-sm p-8 border border-gold/20 h-full" style="box-shadow: 0 8px 40px rgba(201,168,76,0.10);">
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-3">The Studio</p>
+          <h3 class="font-serif text-2xl text-ink mb-3">Personal Formation</h3>
+          <p class="font-sans text-sm text-ink-soft leading-relaxed mb-6">
+            A cohort-based immersion in the Art of Anointing practice. For the creative woman ready to go deeper in beauty, prayer, and embodied creativity.
+          </p>
+          <p class="font-serif text-2xl text-gold mb-5">$1,800</p>
+          <a href="https://artofanointing.com/academy" class="font-mono text-xs tracking-widest uppercase text-ink-soft hover:text-gold transition-colors">Learn More</a>
+        </div>
+        <div class="fade-up delay-2 rounded-sm p-8 h-full relative overflow-hidden" style="background: linear-gradient(135deg, #2C1F0E 0%, #4A6E8A 100%);">
+          <!-- Sunrise glow accent -->
+          <div class="absolute top-0 left-0 right-0 h-1 opacity-60" style="background: linear-gradient(90deg, transparent, #C9A84C, transparent);"></div>
+          <div class="relative z-10">
+            <p class="font-mono text-xs tracking-widest uppercase text-gold mb-3">The Certification</p>
+            <h3 class="font-serif text-2xl text-ivory mb-3">Certified Facilitator</h3>
+            <p class="font-sans text-sm text-white/70 leading-relaxed mb-6">
+              For women called to guide others. Become a certified Anointed Artist Facilitator and lead this work in your practice, retreats, and community.
+            </p>
+            <p class="font-serif text-2xl text-gold mb-5">$4,997</p>
+            <a href="https://artofanointing.com/academy" class="inline-block font-mono text-xs tracking-widest uppercase text-ivory border border-gold/40 rounded-full px-6 py-2.5 hover:border-gold transition-all">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME INSIDE — Candle video as square + text -->
+  <section id="email" class="bg-ink overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 min-h-[600px]">
+
+      <!-- Square video panel -->
+      <div class="relative aspect-square md:aspect-auto overflow-hidden">
+        <video class="absolute inset-0 w-full h-full object-cover object-center" autoplay muted loop playsinline preload="metadata">
+          <source src="WhatsApp_Video_20250624_at_20.51.15_11b883ad.mp4" type="video/mp4" />
+        </video>
+        <!-- Subtle warm vignette -->
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(44,31,14,0.5) 100%);"></div>
+      </div>
+
+      <!-- Text panel -->
+      <div class="relative flex items-center px-10 md:px-16 py-20" style="background: linear-gradient(135deg, #2C1F0E 0%, #1A1208 100%);">
+        <!-- Gold sunrise line top -->
+        <div class="absolute top-0 left-0 right-0 h-px opacity-40" style="background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent);"></div>
+        <div class="fade-up text-ivory w-full">
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-6 opacity-80">Come Inside</p>
+          <h2 class="font-serif text-3xl md:text-4xl italic leading-tight mb-6">
+            Essays. Reflections. Paintings.<br />
+            <span class="sunrise-text">Anointed mornings.</span>
+          </h2>
+          <p class="font-sans text-sm text-white/70 leading-relaxed mb-8">
+            The ongoing conversation around beauty, creativity, prayer, and sacred living. Join the Substack and be the first to know when the book releases.
+          </p>
+          <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer"
+            class="inline-block font-mono text-xs tracking-widest uppercase text-ink bg-gold hover:bg-gold-pale transition-colors rounded-full px-10 py-4 font-medium">
+            Yes, I'm Coming Home
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink py-14 px-6" style="background: #1A1208;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-8">
+        <p class="font-serif italic text-gold text-2xl mb-2">The Art of Anointing</p>
+        <p class="font-mono text-xs tracking-widest uppercase text-white/40">Lucinda Rae · Artist · Author · Perfumer · Teacher</p>
+      </div>
+      <div class="flex items-center gap-4 my-4">
+        <div class="h-px flex-1 bg-gold gold-divider"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-gold opacity-50"></div>
+        <div class="h-px flex-1 bg-gold gold-divider"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 mt-8 text-center">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-3 opacity-70">Explore</p>
+          <a href="#book" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Book</a>
+          <a href="#the-apothecary" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">The Apothecary</a>
+          <a href="#listen" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Listen</a>
+          <a href="#about" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">About</a>
+          <a href="https://artofanointing.com/academy" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">The Academy</a>
+        </div>
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-3 opacity-70">Connected Worlds</p>
+          <a href="https://www.anointedrituals.com/collections/anointing-oils" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Anointing Oils</a>
+          <a href="https://www.anointedrituals.com/collections/botanical-perfumes" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Botanical Perfumes</a>
+          <a href="https://lucindaraeart.com" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Lucinda Rae Art</a>
+          <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Substack</a>
+        </div>
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-gold mb-3 opacity-70">Follow</p>
+          <a href="#" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Instagram</a>
+          <a href="#" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">TikTok</a>
+          <a href="https://artofanointing.substack.com" target="_blank" rel="noopener noreferrer" class="block font-sans text-sm text-white/50 hover:text-white/90 transition-colors mb-1.5">Substack</a>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <p class="font-sans text-xs text-white/25">© 2026 Lucinda Rae · artofanointing.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav glass on scroll
+    const nav = document.getElementById('nav')
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('glass', window.scrollY > 60)
+    })
+
+    // Hero content fade on scroll
+    const heroContent = document.getElementById('hero-content')
+    window.addEventListener('scroll', () => {
+      const progress = Math.min(window.scrollY / window.innerHeight, 1)
+      heroContent.style.opacity = 1 - progress
+    })
+
+    // Fade-up on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible')
+      })
+    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' })
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
+
+    // Art slider
+    const track = document.getElementById('artSlider')
+    const dots = document.querySelectorAll('[data-dot]')
+    const slides = track.querySelectorAll('.slider-slide')
+    let current = 0
+    const isMobile = () => window.innerWidth < 768
+    const perPage = () => isMobile() ? 1 : 2
+    const maxIndex = () => slides.length - perPage()
+
+    function goTo(n) {
+      current = Math.max(0, Math.min(n, maxIndex()))
+      const pct = (100 / perPage()) * current
+      track.style.transform = `translateX(-${pct}%)`
+      dots.forEach((d, i) => d.classList.toggle('opacity-30', i !== current))
+    }
+
+    document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1))
+    document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1))
+    dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.dot)))
+
+    // Auto-advance every 4s
+    setInterval(() => goTo(current >= maxIndex() ? 0 : current + 1), 4000)
+  </script>
+
+</body>
+</html>
