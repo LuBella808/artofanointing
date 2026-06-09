@@ -764,35 +764,42 @@
     const isMobile = () => window.innerWidth < 768
     const perPage = () => isMobile() ? 1 : 2
     const total = slides.length
-    const maxIndex = () => total - perPage()
 
-    function goTo(n, instant) {
+    function maxIndex() { return total - perPage() }
+
+    function slideTo(idx) {
+      current = idx
+      track.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)'
+      track.style.transform = `translateX(-${(100 / perPage()) * current}%)`
+      dots.forEach((d, i) => d.classList.toggle('opacity-30', i !== current))
+    }
+
+    function fadeWrapTo(idx) {
       if (animating) return
-      const target = ((n % total) + total) % total
-      const clamped = Math.min(target, maxIndex())
-
-      // If wrapping from end to start, fade out then snap
-      if (n >= total || n < 0) {
-        animating = true
-        track.style.transition = 'opacity 0.5s ease'
-        track.style.opacity = '0'
-        setTimeout(() => {
-          track.style.transition = 'none'
-          current = clamped
-          track.style.transform = `translateX(-${(100 / perPage()) * current}%)`
-          track.style.opacity = '0'
-          requestAnimationFrame(() => {
-            track.style.transition = 'opacity 0.5s ease'
-            track.style.opacity = '1'
-            setTimeout(() => { animating = false }, 520)
-          })
-          dots.forEach((d, i) => d.classList.toggle('opacity-30', i !== current))
-        }, 520)
-      } else {
-        current = clamped
-        track.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)'
+      animating = true
+      track.style.transition = 'opacity 0.45s ease'
+      track.style.opacity = '0'
+      setTimeout(() => {
+        track.style.transition = 'none'
+        current = idx
         track.style.transform = `translateX(-${(100 / perPage()) * current}%)`
-        dots.forEach((d, i) => d.classList.toggle('opacity-30', i !== current))
+        requestAnimationFrame(() => {
+          track.style.transition = 'opacity 0.45s ease'
+          track.style.opacity = '1'
+          dots.forEach((d, i) => d.classList.toggle('opacity-30', i !== current))
+          setTimeout(() => { animating = false }, 460)
+        })
+      }, 460)
+    }
+
+    function goTo(n) {
+      if (animating) return
+      if (n > maxIndex()) {
+        fadeWrapTo(0)
+      } else if (n < 0) {
+        fadeWrapTo(maxIndex())
+      } else {
+        slideTo(n)
       }
     }
 
