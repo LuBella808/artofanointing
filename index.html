@@ -113,6 +113,27 @@
     }
     .gold-divider { animation: goldPulse 4s ease infinite; }
 
+    .btn-gold-foil {
+      background-image: url(gold-button.jpg);
+      background-size: cover;
+      background-position: center;
+      color: #2C1F0E;
+      position: relative;
+      overflow: hidden;
+      transition: filter 0.25s ease, transform 0.2s ease;
+    }
+    .btn-gold-foil::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 31, 14, 0.12);
+      transition: background 0.25s ease;
+    }
+    .btn-gold-foil:hover::after {
+      background: rgba(44, 31, 14, 0.28);
+    }
+    .btn-gold-foil:hover { transform: scale(1.02); }
+
     @keyframes shimmer {
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
@@ -475,7 +496,7 @@
             "Feeling good isn't a luxury. It's how you show up for your life."
           </p>
           <a href="https://artofanointing.com/feel-good"
-            class="inline-block font-mono text-xs tracking-widest uppercase text-ink bg-gold hover:bg-gold-pale transition-colors rounded-full px-8 py-3 font-medium">
+            class="btn-gold-foil inline-block font-mono text-xs tracking-widest uppercase rounded-full px-8 py-3 font-medium">
             Discover My Wellness Ritual
           </a>
         </div>
@@ -654,34 +675,37 @@
   </section>
 
   <!-- MATRIARCHETYPE QUIZ -->
-  <section id="matriarchetype-quiz" class="py-20 px-6 text-center overflow-hidden" style="background: linear-gradient(180deg, #FAF6EF 0%, #F0E6CC 100%);">
-    <div class="max-w-2xl mx-auto fade-up mb-12">
-      <p class="font-mono text-xs tracking-widest uppercase text-gold mb-4 opacity-80">Discover Your Sacred Type</p>
-      <h2 class="font-serif text-3xl md:text-4xl text-ink leading-tight mb-5">Which Matriarch Are You?</h2>
-      <p class="font-sans text-ink-soft text-base leading-relaxed max-w-xl mx-auto">
-        Scripture gives us four women whose lives still speak: Sarah, Rebekah, Rachel, Leah. Each one carried a different kind of strength, a different way of loving, a different path through hardship into purpose. One of them is you. This two-minute quiz will show you which matriarchal essence is alive in you right now, and how to tend her with sacred self-care.
-      </p>
-    </div>
-  </section>
-
-  <!-- MATRIARCHETYPE BANNER + QUIZ BODY -->
-  <div style="font-family: sans-serif;">
+  <section id="matriarchetype-quiz" class="overflow-hidden">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-    <header style="position:relative; min-height:max(560px, 78vh); display:flex; align-items:center; justify-content:center; padding:64px 20px; background-image:url(uploads/Matriarchetype_Quiz-banner-all-of-them-centered_.jpg); background-size:cover; background-position:center; font-family:Montserrat, sans-serif;">
+
+    <!-- Intro preface -->
+    <div class="py-20 px-6 text-center fade-up relative overflow-hidden" style="background: linear-gradient(160deg, #0a2a3a 0%, #0f3040 35%, #1f4f55 65%, #0d2428 100%);">
+      <!-- teal-green + teal-blue glow orbs -->
+      <div style="position:absolute; left:10%; top:-10%; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(31,120,130,0.38) 0%, transparent 70%); filter:blur(60px); pointer-events:none;"></div>
+      <div style="position:absolute; right:8%; bottom:-10%; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(74,158,202,0.28) 0%, transparent 70%); filter:blur(56px); pointer-events:none;"></div>
+      <div style="position:absolute; left:50%; top:30%; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(74,158,202,0.18) 0%, transparent 70%); filter:blur(48px); transform:translateX(-50%); pointer-events:none;"></div>
+      <div class="relative max-w-2xl mx-auto space-y-5">
+        <p class="font-mono text-xs tracking-widest uppercase opacity-70" style="color:#7ecfda;">Discover Your Biblical Feminine Archetype</p>
+        <h2 class="font-serif text-3xl md:text-4xl leading-tight text-white">Which Matriarch Are You?</h2>
+        <p class="font-sans text-base leading-relaxed max-w-xl mx-auto" style="color:rgba(255,255,255,0.75);">
+          Scripture gives us four women whose lives still speak: Sarah, Rebekah, Rachel, Leah. Each one carried a different kind of strength, a different way of loving, a different path through hardship into purpose.
+        </p>
+        <p class="font-serif italic" style="color:rgba(255,255,255,0.90); font-size:clamp(19px, 2vw, 22px);">One of them is like you...</p>
+      </div>
+    </div>
+
+    <!-- Banner -->
+    <header style="position:relative; min-height:max(700px, 100vh); display:flex; align-items:center; justify-content:center; padding:64px 20px; overflow:hidden; font-family:Montserrat, sans-serif;">
+      <img src="Matriarchetype_Quiz-banner-all-of-them-centered_.jpg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center;">
       <div style="position:absolute; inset:0; background:radial-gradient(ellipse 46% 42% at 50% 50%, rgba(255,248,236,0.72), rgba(255,248,236,0) 100%);"></div>
       <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center; max-width:640px; width:100%;">
-        <img src="uploads/Matriarchetype-title_.png" alt="Matriarchetype" style="width:100%; max-width:520px; height:auto; display:block;">
+        <img src="Matriarchetype-title_.png" alt="Matriarchetype" style="width:100%; max-width:520px; height:auto; display:block;">
         <div style="font-weight:800; font-size:clamp(18px, 2.6vw, 26px); letter-spacing:0.6em; padding-left:0.6em; color:#1d1a16;">THE QUIZ</div>
         <p style="margin:0; font-family:'Playfair Display', serif; font-style:italic; font-size:clamp(20px, 2.4vw, 26px); line-height:1.35; color:#2d2410;">Unveil Your Matriarchal Essence<br>&amp; with Anointed Self-Care</p>
-        <a href="#quiz" style="margin-top:6px; display:inline-block; background:#1f4f55; color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:13px 28px; border-radius:999px; box-shadow:0 6px 20px rgba(20,50,55,0.25);">Take the 2-Minute Quiz Now</a>
+        <a href="https://artofanointing.com/matriarchetype-quiz" style="margin-top:6px; display:inline-block; background:#1f4f55; color:#fff; text-decoration:none; font-weight:600; font-size:14px; padding:13px 28px; border-radius:999px; box-shadow:0 6px 20px rgba(20,50,55,0.25); transition:background 0.25s ease, box-shadow 0.25s ease;" onmouseover="this.style.backgroundImage='url(gold-button.jpg)';this.style.backgroundSize='cover';this.style.backgroundPosition='center';this.style.color='#2C1F0E';this.style.boxShadow='0 6px 24px rgba(201,168,76,0.35)';" onmouseout="this.style.backgroundImage='none';this.style.background='#1f4f55';this.style.color='#fff';this.style.boxShadow='0 6px 20px rgba(20,50,55,0.25)';">Take the 2-Minute Quiz Now</a>
       </div>
     </header>
-
-    <!-- Quiz questions go here — paste the full #quiz section from Matriarchetype Quiz.dc.html -->
-    <div id="quiz" style="background:#FAF6EF; padding:80px 24px; text-align:center;">
-      <p style="font-family:'Playfair Display', serif; font-style:italic; font-size:22px; color:#2d2410;">Quiz coming soon — paste the full quiz section here.</p>
-    </div>
-  </div>
+  </section>
 
   <!-- ACADEMY -->
   <section id="the-academy" class="py-28 px-6" style="background: linear-gradient(180deg, #F0E6CC 0%, #FAF6EF 100%);">
@@ -748,7 +772,7 @@
             The ongoing conversation around beauty, creativity, prayer, and sacred living. Join the Substack and be the first to know when the book releases.
           </p>
           <a href="https://anointedartist.substack.com" target="_blank" rel="noopener noreferrer"
-            class="inline-block font-mono text-xs tracking-widest uppercase text-ink bg-gold hover:bg-gold-pale transition-colors rounded-full px-10 py-4 font-medium">
+            class="btn-gold-foil inline-block font-mono text-xs tracking-widest uppercase rounded-full px-10 py-4 font-medium">
             Yes, I'm Coming Home
           </a>
         </div>
